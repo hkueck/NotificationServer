@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option csharp_namespace = "MesNotificationsProto";
+
+service NotificationServer{
+  rpc ProductionStepsChanged(ProductionStepsChangedRequest) returns(NotificationResponse);
+}
+
+message ProductionStepsChangedRequest{
+  repeated WorkstationProductionSteps workstationsProductionSteps = 1;
+}
+
+message WorkstationProductionSteps {
+  string workstationId = 1;
+  repeated ProductionStep productionSteps = 2;
+}
+
+message ProductionStep {
+  string id = 1;
+  ProductionStepStatus status = 2;
+}
+
+message Uuid {
+  string value = 1;
+}
+
+message NotificationResponse{
+  NotificationResult result = 1;
+}
+
+enum NotificationResult {
+  Success = 0;
+  Failure = 1;
+}
+
+enum ProductionStepStatus {
+  None = 0;
+  Active = 1;
+}

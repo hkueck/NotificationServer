@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="0.10.0" />
+        <PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
+        <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
+        <PackageReference Include="Google.Protobuf" Version="3.15.6" />
+        <PackageReference Include="Grpc.Net.Client" Version="2.35.0" />
+        <PackageReference Include="Grpc.Tools" Version="2.36.1">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Prism.Avalonia" Version="7.2.0.1430" />
+        <PackageReference Include="Prism.DryIoc.Avalonia" Version="7.2.0.1430" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="Views\Shell.axaml.cs">
+        <DependentUpon>Shell.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\MesNotificationsProto\MesNotificationsProto.csproj" />
+    </ItemGroup>
+</Project>

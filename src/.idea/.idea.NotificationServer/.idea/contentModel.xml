@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.3/resharper-host/local/Transient/Rider/v203/SolutionCaches/_NotificationServer.352322267.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="MesNotifications" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Contracts" t="Include">
+          <e p="INotificationClient.cs" t="Include" />
+        </e>
+        <e p="Dto" t="Include">
+          <e p="ChangedProductionStep.cs" t="Include" />
+        </e>
+        <e p="MesNotifications.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="MesNotifications.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="MesNotificationsProto" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MesNotificationsProto.csproj" t="IncludeRecursive" />
+        <e p="Notification.proto" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="MesNotificationsProto.AssemblyInfo.cs" t="Include" />
+              <e p="Notification.cs" t="Include" />
+              <e p="NotificationGrpc.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="NotificationReceiver" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
+        <e p="App.axaml" t="Include" />
+        <e p="App.axaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Contracts" t="Include">
+          <e p="INotificationsViewModel.cs" t="Include" />
+        </e>
+        <e p="NotificationReceiver.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Avalonia" t="Include">
+                <e p="resources" t="Include" />
+              </e>
+              <e p="NotificationReceiver.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="SignalR" t="Include">
+          <e p="Client.cs" t="Include" />
+        </e>
+        <e p="ViewModels" t="Include">
+          <e p="NotificationsViewModel.cs" t="Include" />
+          <e p="ShellViewModel.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="NotificationsView.axaml" t="Include" />
+          <e p="NotificationsView.axaml.cs" t="Include" />
+          <e p="Shell.axaml" t="Include" />
+          <e p="Shell.axaml.cs" t="Include" />
+        </e>
+      </e>
+      <e p="NotificationSender" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
+        <e p="App.axaml" t="Include" />
+        <e p="App.axaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Contracts" t="Include">
+          <e p="INotificationChannel.cs" t="Include" />
+          <e p="IProductionStepsChangedUseCase.cs" t="Include" />
+          <e p="ISenderViewModel.cs" t="Include" />
+        </e>
+        <e p="Grpc" t="Include">
+          <e p="NotificationChannel.cs" t="Include" />
+        </e>
+        <e p="NotificationSender.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Avalonia" t="Include">
+                <e p="resources" t="Include" />
+              </e>
+              <e p="NotificationSender.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="UseCases" t="Include">
+          <e p="ProductionStepsChangedUseCase.cs" t="Include" />
+        </e>
+        <e p="ViewModels" t="Include">
+          <e p="SenderViewModel.cs" t="Include" />
+          <e p="ShellViewModel.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="SenderView.axaml" t="Include" />
+          <e p="SenderView.axaml.cs" t="Include" />
+          <e p="Shell.axaml" t="Include" />
+          <e p="Shell.axaml.cs" t="Include" />
+        </e>
+      </e>
+      <e p="NotificationServer" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="extensions" t="Include">
+          <e p="ProductionStepStatusExtension.cs" t="Include" />
+        </e>
+        <e p="Hubs" t="Include">
+          <e p="NotificationHub.cs" t="Include" />
+        </e>
+        <e p="NotificationServer.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="NotificationServer.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="NotificationService.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="NotificationServer.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
