@@ -14,14 +14,21 @@ namespace NotificationServer.Hubs
         {
             if (!Connections.ContainsKey(Context.ConnectionId))
             {
-                // Context.Features
-                // // Connections.TryAdd(Context.QueryString["UserName"], Context.ConnectionId);
+                var request = Context.GetHttpContext().Request;
+                var workstationId = request.Headers["wid"].ToString();
+                Connections[workstationId.ToLower()] = Context.ConnectionId;
             }
             return base.OnConnectedAsync();
         }
 
         public override Task OnDisconnectedAsync(Exception exception)
         {
+            var request = Context.GetHttpContext().Request;
+            var workstationId = request.Headers["wid"];
+            if (Connections.ContainsKey(workstationId))
+            {
+                Connections.TryRemove(workstationId, out _);
+            }
             return base.OnDisconnectedAsync(exception);
         }
     }

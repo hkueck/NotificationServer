@@ -3,10 +3,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mvvm="http://prismlibrary.com/"
+             xmlns:viewModels="clr-namespace:NotificationReceiver.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              mvvm:ViewModelLocator.AutoWireViewModel="True"
              x:Class="NotificationReceiver.Views.NotificationsView">
-    <Grid>
-        <TextBlock Text="Hier bin ich"></TextBlock>
+    <Design.DataContext>
+        <viewModels:NotificationsViewModel/>
+    </Design.DataContext>
+    <Grid RowDefinitions="Auto, *">
+        <Grid Grid.Row="0"
+              ColumnDefinitions="Auto, Auto, *">
+            <Button Grid.Column="0"
+                    Content="Start connection" 
+                    Margin="10"
+                    Command="{Binding StartConnectionCommand}"/>
+            <TextBox Grid.Column="1" 
+                     Margin="10"
+                     Text="{Binding WorkstationNumber}"/>
+        </Grid>
+        <ListBox Grid.Row="1"
+                 Margin="10"
+                 Items="{Binding Notifications}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Id}"
+                                   Margin="10"/>
+                        <TextBlock Text="{Binding State}"
+                                   Margin="10"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>    
 </UserControl>

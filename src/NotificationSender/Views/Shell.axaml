@@ -8,7 +8,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="NotificationSender.Views.Shell"
         Title="NotificationSender">
-    <Grid>
-        <views:SenderView/>
+    <Grid ColumnDefinitions="*, *">
+        <views:SenderView Grid.Column="0"/>
+        <views:SenderView Grid.Column="1"/>
     </Grid>
 </Window>

@@ -10,15 +10,19 @@
     <Design.DataContext>
         <viewModels:SenderViewModel/>
     </Design.DataContext>
-    <Grid RowDefinitions="Auto, Auto, *" ColumnDefinitions="Auto, *">
+    <Grid RowDefinitions="Auto, Auto, *" ColumnDefinitions="Auto, Auto, *">
         <Button Grid.Row="0"
                 Grid.Column="0"
                 Content="Send ProductionStepsChanged"
                 Margin="10"
                 Command="{Binding SendProductionStepChanged}"
         />
+        <TextBox Grid.Row="0"
+                 Grid.Column="1"
+                 Margin="10"
+                 Text="{Binding WorkstationNumber}"></TextBox>
         <TextBlock Grid.Row="0" 
-                   Grid.Column="1"
+                   Grid.Column="2"
                    Margin="10"
                    Text="{Binding Result}"/>
     </Grid>

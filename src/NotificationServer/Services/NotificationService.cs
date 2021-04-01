@@ -27,10 +27,13 @@ namespace NotificationServer.Services
                 var productionSteps = new List<ChangedProductionStep>();
                 foreach (var step in workstationProductionSteps.ProductionSteps)
                 {
-                    var productionStep = new ChangedProductionStep {Id = new Guid(step.Id), Status =  step.StepStatus()};
+                    var productionStep = new ChangedProductionStep {Id = new Guid(step.Id), State =  step.StepStatus()};
                     productionSteps.Add(productionStep);
                 }
-                _hubContext.Clients.User(workstationProductionSteps.WorkstationId).SendProductionStepChanged(productionSteps);
+
+                if (NotificationHub.Connections.TryGetValue(workstationProductionSteps.WorkstationId.ToLower(), out var connectionId)){
+                    _hubContext.Clients.Client(connectionId).SendProductionStepChanged(productionSteps);
+                }
             }
             var response = new NotificationResponse{Result = NotificationResult.Success};
             return Task.FromResult(response);

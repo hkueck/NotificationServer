@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Markup.Xaml;
 using NotificationReceiver.Contracts;
+using NotificationReceiver.SignalR;
 using NotificationReceiver.ViewModels;
 using NotificationReceiver.Views;
 using Prism.DryIoc;
@@ -18,6 +19,7 @@ namespace NotificationReceiver
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<INotificationClient, NotificationClient>();
         }
 
         protected override IAvaloniaObject CreateShell()

@@ -2,6 +2,6 @@ namespace NotificationSender.Contracts
 {
     public interface IProductionStepsChangedUseCase
     {
-        string Execute();
+        string Execute(int workstationNumber);
     }
 }

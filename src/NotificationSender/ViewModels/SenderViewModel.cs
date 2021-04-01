@@ -9,6 +9,7 @@ namespace NotificationSender.ViewModels
     {
         private readonly IProductionStepsChangedUseCase? _productionStepsChangedUseCase;
         private string _result;
+        private int _workstationNumber;
 
         public DelegateCommand SendProductionStepChanged
         {
@@ -20,14 +21,23 @@ namespace NotificationSender.ViewModels
             get => _result;
             set
             {
-                _result = value;
-                RaisePropertyChanged();
+                SetProperty(ref _result, value);
+            }
+        }
+
+        public int WorkstationNumber
+        {
+            get => _workstationNumber;
+            set
+            {
+                SetProperty(ref _workstationNumber, value);
             }
         }
 
         public SenderViewModel()
         {
             _result = "";
+            _workstationNumber = 1;
             SendProductionStepChanged = new DelegateCommand(OnSendPropertyChanged);
         }
 
@@ -38,7 +48,10 @@ namespace NotificationSender.ViewModels
 
         private void OnSendPropertyChanged()
         {
-            Result = _productionStepsChangedUseCase?.Execute() ?? throw new InvalidOperationException();
+            // for (int i = 0; i < 1000; i++)
+            // {
+                Result = _productionStepsChangedUseCase?.Execute(_workstationNumber) ?? throw new InvalidOperationException();
+            // }
         }
 
     }

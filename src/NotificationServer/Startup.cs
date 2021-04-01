@@ -20,6 +20,7 @@ namespace NotificationServer
         {
             services.AddGrpc();
             services.AddSignalR();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,11 +32,18 @@ namespace NotificationServer
             }
 
             app.UseRouting();
-
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("https//localhost")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowAnyOrigin();
+            });
+            
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<NotificationService>();
                 endpoints.MapHub<NotificationHub>("mes/notifications");
+                endpoints.MapGrpcService<NotificationService>();
 
                 endpoints.MapGet("/",
                     async context =>
@@ -44,6 +52,7 @@ namespace NotificationServer
                             "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
                     });
             });
+
         }
     }
 }

@@ -9,6 +9,6 @@
         x:Class="NotificationReceiver.Views.Shell"
         Title="NotificationReceiver">
     <Grid>
-         <views:NotificationsView/>       
+        <views:NotificationsView/>       
     </Grid>        
 </Window>
