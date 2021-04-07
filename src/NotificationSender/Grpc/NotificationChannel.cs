@@ -1,6 +1,5 @@
 using System;
 using Grpc.Net.Client;
-using Microsoft.Extensions.Logging;
 using NotificationSender.Contracts;
 
 namespace NotificationSender.Grpc
